@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<project type="activity" builder="java">
+  <name>Event Device Writer</name>
+  <description>
+Creates a virtual evdev input device, sythesizes input events from a route.
+  </description>
+
+  <identifyingName>com.endpoint.lg.evdev.writer</identifyingName>
+  <version>1.0.0.dev</version>
+
+  <resources>
+    <resource sourceFile="${project.home}/src/main/native/libispaces-uinput.so" />
+  </resources>
+
+  <deployments>
+    <deployment type="testdeploy" location="${deployment.test.deploy}" />
+    <deployment type="testimport" location="${deployment.test.import}" />
+  </deployments>
+</project>

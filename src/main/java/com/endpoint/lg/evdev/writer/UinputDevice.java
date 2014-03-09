@@ -16,7 +16,7 @@
 
 package com.endpoint.lg.evdev.writer;
 
-import com.endpoint.lg.support.domain.evdev.InputEvent;
+import com.endpoint.lg.support.evdev.InputEvent;
 import interactivespaces.SimpleInteractiveSpacesException;
 
 import java.io.File;

@@ -16,7 +16,7 @@
 
 package com.endpoint.lg.evdev.writer;
 
-import com.endpoint.lg.support.domain.evdev.InputEvent;
+import com.endpoint.lg.support.evdev.EventCodes;
 import interactivespaces.InteractiveSpacesException;
 import interactivespaces.SimpleInteractiveSpacesException;
 import interactivespaces.configuration.Configuration;
@@ -105,10 +105,10 @@ public class UinputDeviceManagedResource implements ManagedResource {
     int version = config.getRequiredPropertyInteger(CONFIGURATION_NAME_DEVICE_VERSION);
 
     // read all available ABS min/max configuration values
-    int[] abs_min = new int[InputEvent.Codes.ABS_CNT];
-    int[] abs_max = new int[InputEvent.Codes.ABS_CNT];
+    int[] abs_min = new int[EventCodes.ABS_CNT];
+    int[] abs_max = new int[EventCodes.ABS_CNT];
 
-    for (int i = 0; i < InputEvent.Codes.ABS_MAX; i++) {
+    for (int i = 0; i < EventCodes.ABS_MAX; i++) {
       abs_min[i] = config.getPropertyInteger(CONFIGURATION_NAME_DEVICE_ABS_MIN + "." + i, 0);
       abs_max[i] = config.getPropertyInteger(CONFIGURATION_NAME_DEVICE_ABS_MAX + "." + i, 0);
     }

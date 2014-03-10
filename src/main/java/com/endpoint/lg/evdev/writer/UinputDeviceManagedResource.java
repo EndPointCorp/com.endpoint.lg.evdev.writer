@@ -16,7 +16,7 @@
 
 package com.endpoint.lg.evdev.writer;
 
-import com.endpoint.lg.support.evdev.EventCodes;
+import com.endpoint.lg.support.evdev.InputEventCodes;
 import interactivespaces.InteractiveSpacesException;
 import interactivespaces.SimpleInteractiveSpacesException;
 import interactivespaces.configuration.Configuration;
@@ -84,14 +84,16 @@ public class UinputDeviceManagedResource implements ManagedResource {
   /**
    * Instantiates a new uinput device manager with the given configuration.
    * 
-   * @param config the activity configuration
+   * @param config
+   *          the activity configuration
    */
   public UinputDeviceManagedResource(Configuration config) {
     this.config = config;
   }
 
   /**
-   * Creates a new uinput device, using settings from the activity configuration.
+   * Creates a new uinput device, using settings from the activity
+   * configuration.
    */
   @Override
   public void startup() {
@@ -105,10 +107,10 @@ public class UinputDeviceManagedResource implements ManagedResource {
     int version = config.getRequiredPropertyInteger(CONFIGURATION_NAME_DEVICE_VERSION);
 
     // read all available ABS min/max configuration values
-    int[] abs_min = new int[EventCodes.ABS_CNT];
-    int[] abs_max = new int[EventCodes.ABS_CNT];
+    int[] abs_min = new int[InputEventCodes.ABS_CNT];
+    int[] abs_max = new int[InputEventCodes.ABS_CNT];
 
-    for (int i = 0; i < EventCodes.ABS_MAX; i++) {
+    for (int i = 0; i < InputEventCodes.ABS_MAX; i++) {
       abs_min[i] = config.getPropertyInteger(CONFIGURATION_NAME_DEVICE_ABS_MIN + "." + i, 0);
       abs_max[i] = config.getPropertyInteger(CONFIGURATION_NAME_DEVICE_ABS_MAX + "." + i, 0);
     }

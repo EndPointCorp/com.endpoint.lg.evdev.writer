@@ -17,6 +17,7 @@
 package com.endpoint.lg.evdev.writer;
 
 import com.endpoint.lg.support.evdev.InputEvent;
+
 import interactivespaces.SimpleInteractiveSpacesException;
 
 import java.io.File;
@@ -188,6 +189,7 @@ public class UinputDevice {
 
     public static String[] getLoadedLibraries(final ClassLoader loader) {
       try {
+        @SuppressWarnings("unchecked")
         final Vector<String> libraries = (Vector<String>) LIBRARIES.get(loader);
         return libraries.toArray(new String[] {});
       } catch (IllegalAccessException e) {

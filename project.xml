@@ -2,7 +2,7 @@
 <project type="activity" builder="java">
   <name>Event Device Writer</name>
   <description>
-Creates a virtual evdev input device, sythesizes input events from a route.
+Creates a virtual evdev input device, synthesizes input events from a route.
   </description>
 
   <identifyingName>com.endpoint.lg.evdev.writer</identifyingName>

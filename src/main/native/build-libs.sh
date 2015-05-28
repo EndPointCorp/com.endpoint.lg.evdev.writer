@@ -1,6 +1,7 @@
 #!/bin/sh
 
 set -e
+set -x
 
 if [ -z $CLASSPATH ]; then
   export CLASSPATH="../../../build/classes/main:../../../../com.endpoint.lg.support/build/classes/main"

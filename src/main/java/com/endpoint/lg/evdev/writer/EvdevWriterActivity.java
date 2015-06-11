@@ -22,6 +22,7 @@ import interactivespaces.InteractiveSpacesException;
 import interactivespaces.SimpleInteractiveSpacesException;
 import interactivespaces.activity.impl.ros.BaseRoutableRosActivity;
 import interactivespaces.util.data.json.JsonNavigator;
+import interactivespaces.util.data.json.StandardJsonNavigator;
 
 import java.util.Map;
 
@@ -67,7 +68,7 @@ public class EvdevWriterActivity extends BaseRoutableRosActivity {
     getLog().debug("Got message on input channel " + channelName);
     getLog().debug(m);
 
-    JsonNavigator message = new JsonNavigator(m);
+    JsonNavigator message = new StandardJsonNavigator(m);
 
     handleInputEventMessage(message);
   }

@@ -8,6 +8,36 @@ Creates a virtual evdev input device, synthesizes input events from a route.
   <identifyingName>com.endpoint.lg.evdev.writer</identifyingName>
   <version>1.0.0.dev</version>
 
+  <activity type="interactivespaces_native">
+    <name>LGMultiaxisRoutableInputActivity</name>
+    <class>com.endpoint.lg.evdev.writer.EvdevWriterActivity</class>
+    <configuration>
+      <property name="space.activity.log.level"><value>info</value></property>
+      <property name="space.activity.ros.node.name"><value>liquidgalaxy/evdev/writer/${lg.evdev.device.name}</value></property>
+      <property name="space.activity.routes.inputs"><value>event</value></property>
+      <property name="space.activity.route.input.event"><value>/liquidgalaxy/${space.activity.group}/evdev/${lg.evdev.device.name}/raw</value></property>
+      <property name="lg.evdev.uinput.location"><value>/dev/uinput</value></property>
+      <property name="lg.evdev.uinput.jnilib"><value>${activity.installdir}/libispaces-uinput.so</value></property>
+      <property name="lg.evdev.device.name"><value>default</value></property>
+      <property name="lg.evdev.device.xinputName"><value>IS Virtual SpaceNav</value></property>
+      <property name="lg.evdev.device.vendor"><value>1133</value></property>
+      <property name="lg.evdev.device.product"><value>50726</value></property>
+      <property name="lg.evdev.device.version"><value>1</value></property>
+      <property name="lg.evdev.device.abs.min.0"><value>-350</value></property>
+      <property name="lg.evdev.device.abs.min.1"><value>-350</value></property>
+      <property name="lg.evdev.device.abs.min.2"><value>-350</value></property>
+      <property name="lg.evdev.device.abs.min.3"><value>-350</value></property>
+      <property name="lg.evdev.device.abs.min.4"><value>-350</value></property>
+      <property name="lg.evdev.device.abs.min.5"><value>-350</value></property>
+      <property name="lg.evdev.device.abs.max.0"><value>350</value></property>
+      <property name="lg.evdev.device.abs.max.1"><value>350</value></property>
+      <property name="lg.evdev.device.abs.max.2"><value>350</value></property>
+      <property name="lg.evdev.device.abs.max.3"><value>350</value></property>
+      <property name="lg.evdev.device.abs.max.4"><value>350</value></property>
+      <property name="lg.evdev.device.abs.max.5"><value>350</value></property>
+    </configuration>
+  </activity>
+
   <resources>
     <resource sourceFile="${project.home}/src/main/native/libispaces-uinput.so" />
   </resources>

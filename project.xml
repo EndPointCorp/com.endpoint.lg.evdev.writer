@@ -12,6 +12,9 @@ Creates a virtual evdev input device, synthesizes input events from a route.
     <name>LGMultiaxisRoutableInputActivity</name>
     <class>com.endpoint.lg.evdev.writer.EvdevWriterActivity</class>
     <configuration>
+      <property name="space.activity.group">
+        <value>generic</value>
+      </property>
       <property name="space.activity.log.level"><value>info</value></property>
       <property name="space.activity.ros.node.name"><value>liquidgalaxy/evdev/writer/${lg.evdev.device.name}</value></property>
       <property name="space.activity.routes.inputs"><value>event</value></property>
